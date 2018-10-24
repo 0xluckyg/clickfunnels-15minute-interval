@@ -1,3 +1,5 @@
+<script>
+
   function convertMinutes(now) {
     if (now < 15) { return 15 }
     else if (now < 30) { return 30 }
@@ -30,11 +32,11 @@ $time_now_seconds = moment().format("mm:ss");
 $time_left_in_seconds = convertSeconds($time_now_seconds)
 $formatted_time_left = moment.utc($time_left_in_seconds*1000).format('mm:ss');
   console.log('formated',$formatted_time_left);
-$time_now_difference = convertMinutes($time_now) - $time_now;
-$time_now_diff_seconds = $time_now_difference * 60;
+// $time_now_difference = convertMinutes($time_now) - $time_now;
+// $time_now_diff_seconds = $time_now_difference * 60;
 $.countdown.setDefaults($.countdown.regionalOptions["eng"]);
 $(".elCountdownEvergreen").countdown({
- until: $time_now_diff_seconds,
+ until: $time_left_in_seconds,
  padZeroes: true 
  });
 // set value of webinar
@@ -60,3 +62,4 @@ $("body").on('click','a[href="#submit-form"]', function(){
  $("#webinar_delay").attr("value", webinar_delay);
 });
 });
+</script>
