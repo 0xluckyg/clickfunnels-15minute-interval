@@ -1,5 +1,3 @@
-<script>
-
   function convertMinutes(now) {
     if (now < 15) { return 15 }
     else if (now < 30) { return 30 }
@@ -62,4 +60,3 @@ $("body").on('click','a[href="#submit-form"]', function(){
  $("#webinar_delay").attr("value", webinar_delay);
 });
 });
-</script>
